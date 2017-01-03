@@ -13,6 +13,7 @@
 		05B224AF1E1B3E1000CCC42B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B224AD1E1B3E1000CCC42B /* Main.storyboard */; };
 		05B224B11E1B3E1000CCC42B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05B224B01E1B3E1000CCC42B /* Assets.xcassets */; };
 		05B224B41E1B3E1000CCC42B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B224B21E1B3E1000CCC42B /* LaunchScreen.storyboard */; };
+		78133657CB1A90B93D60F628 /* libPods-Blackboard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA69FC48DB84786A2A8B8890 /* libPods-Blackboard.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		05B224B01E1B3E1000CCC42B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05B224B31E1B3E1000CCC42B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05B224B51E1B3E1000CCC42B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49EDA3C1288663FD358A4917 /* Pods-Blackboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blackboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-Blackboard/Pods-Blackboard.release.xcconfig"; sourceTree = "<group>"; };
+		AB1CE45EF20A2B8B5ACFDCB2 /* Pods-Blackboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blackboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Blackboard/Pods-Blackboard.debug.xcconfig"; sourceTree = "<group>"; };
+		EA69FC48DB84786A2A8B8890 /* libPods-Blackboard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Blackboard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78133657CB1A90B93D60F628 /* libPods-Blackboard.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				05B224A31E1B3E1000CCC42B /* Blackboard */,
 				05B224A21E1B3E1000CCC42B /* Products */,
+				C916D22DCA3AFDDEC966CA8D /* Pods */,
+				7EDF962D429BE3C3DB4DBD6C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +86,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7EDF962D429BE3C3DB4DBD6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA69FC48DB84786A2A8B8890 /* libPods-Blackboard.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C916D22DCA3AFDDEC966CA8D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AB1CE45EF20A2B8B5ACFDCB2 /* Pods-Blackboard.debug.xcconfig */,
+				49EDA3C1288663FD358A4917 /* Pods-Blackboard.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05B224B81E1B3E1000CCC42B /* Build configuration list for PBXNativeTarget "Blackboard" */;
 			buildPhases = (
+				55E454B853B539CE0B873A51 /* [CP] Check Pods Manifest.lock */,
 				05B2249D1E1B3E1000CCC42B /* Sources */,
 				05B2249E1E1B3E1000CCC42B /* Frameworks */,
 				05B2249F1E1B3E1000CCC42B /* Resources */,
+				AABA89D64C37340AD521789B /* [CP] Embed Pods Frameworks */,
+				D1C815295A1B32642A836137 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,6 +170,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		55E454B853B539CE0B873A51 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AABA89D64C37340AD521789B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blackboard/Pods-Blackboard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1C815295A1B32642A836137 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blackboard/Pods-Blackboard-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		05B2249D1E1B3E1000CCC42B /* Sources */ = {
@@ -259,6 +334,7 @@
 		};
 		05B224B91E1B3E1000CCC42B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB1CE45EF20A2B8B5ACFDCB2 /* Pods-Blackboard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Blackboard/Info.plist;
@@ -270,6 +346,7 @@
 		};
 		05B224BA1E1B3E1000CCC42B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49EDA3C1288663FD358A4917 /* Pods-Blackboard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Blackboard/Info.plist;
@@ -298,6 +375,7 @@
 				05B224BA1E1B3E1000CCC42B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

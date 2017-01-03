@@ -11,18 +11,35 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
+    
     _red = 0.0/255.0;
     _green = 0.0/255.0;
     _blue = 0.0/255.0;
     _brush = 10.0;
     _opacity = 1.0;
     
-    [super viewDidLoad];
+    [self connectSocket];
+}
+
+- (void)connectSocket {
+    NSURL *url = [NSURL URLWithString:@"http://192.168.0.11:4000/socket/websocket"];
+    self.socket = [[PhxSocket alloc] initWithURL:url heartbeatInterval:20];
+    self.channel = [[PhxChannel alloc] initWithSocket: self.socket topic:@"rooms:blackboard" params:@{}];
+    
+    [self.socket onError:^(id error){
+        NSLog(@"Error receiver: %@", error);
+    }];
+    
+    [self.socket onOpen:^(){
+        NSLog(@"Socket was open");
+    }];
+    
+    [self.socket connectWithParams:@{}];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

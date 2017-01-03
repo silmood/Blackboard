@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <PhxSocket.h>
+#import <PhxChannel.h>
 
 @interface ViewController : UIViewController
 @property (nonatomic) CGPoint lastPoint;
@@ -16,6 +18,8 @@
 @property (nonatomic) CGFloat brush;
 @property (nonatomic) CGFloat opacity;
 @property (nonatomic) BOOL mouseSwiped;
+@property (nonatomic, retain) PhxSocket *socket;
+@property (nonatomic, retain) PhxChannel *channel;
 @property (nonatomic) IBOutlet UIImageView *mainImage;
 @property (nonatomic) IBOutlet UIImageView *tempDrawImage;
 @end
