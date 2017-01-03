@@ -7,7 +7,7 @@ use Mix.Config
 
 # Configures the endpoint
 config :blackboard, Blackboard.Endpoint,
-  url: [host: "localhost"],
+  url: [host: "192.168.0.11"],
   root: Path.dirname(__DIR__),
   secret_key_base: "iWNBHcLPE51ZaxAXdl20tyfllF1y0gwQAAVksnLfE/dRMd2kIy+ilWAKigia+77o",
   render_errors: [accepts: ~w(html json)],
